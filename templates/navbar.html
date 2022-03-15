@@ -1,0 +1,31 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid container p-1">
+      <a class="navbar-brand w-50" href="#"> <img src="{% static 'fonts/logo.png' %}" > </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " style="margin-left:2%" id="navbarNavAltMarkup">
+        <div class="navbar-nav  " style="font-size:1.1rem">
+
+          <a class="nav-link m-2 {% if request.path == '/' %}  active {% endif %} " aria-current="page" href="{% url 'home' %}"> 
+            <i class="fa-solid fa-house-chimney"></i> Home
+          </a>
+
+          <a class="nav-link m-2 " href="{% url 'services' %}">
+            <i class="fa-solid fa-bell-concierge"></i> Servicios
+          </a>
+
+          <a class="nav-link m-2 " href="{% url 'blog' %}">
+            <i class="fa-solid fa-file-lines"></i> Blog
+          </a>
+
+          <a class="nav-link m-2 {% if request.path == '/citas/' %}  active {% endif %} " href="{% url 'citas' %}">
+            <i class="fa-solid fa-comment-sms"></i> Porgramar Cita
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </nav>

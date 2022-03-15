@@ -1,0 +1,61 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Blog</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <!-- Our project just needs Font Awesome Free's Solid + Brand files -->
+        <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+          
+        
+    </head>
+    <body>
+      {% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid container p-1 pt-4 pb-4">
+      <a class="navbar-brand w-50" href="#"> <img src="{% static 'fonts/blog_logo.png' %}" > </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3" style="margin-left:2%" id="navbarNavAltMarkup">
+        <div class="navbar-nav  " style="font-size:1.2rem">
+
+          <a class="nav-link m-2 {% if request.path == '/' %}  active {% endif %} " aria-current="page" href="{% url 'home' %}"> 
+            <i class="fa-solid fa-house-chimney"></i> Home
+          </a>
+
+          <a class="nav-link m-2 {% if request.path == '/citas/' %}  active {% endif %} " href="{% url 'citas' %}">
+            <i class="fa-solid fa-comment-sms"></i> Porgramar Cita
+          </a>
+
+          <div style="font-size: 2.5rem; text-decoration:none; " >
+            <a style="text-decoration:none; color:gray"  href="#" > 
+                <i class="fa-brands fa-facebook"></i> </a>
+            <a style="text-decoration:none; color:gray"  href="#" > 
+                <i class="fa-brands fa-instagram"></i> </a>
+            <a style="text-decoration:none; color:gray"  href="#" > 
+                <i class="fa-brands fa-whatsapp"></i> </a>
+            <a style="text-decoration:none; color:gray"  href="#" > 
+                <i class="fa-brands fa-facebook-messenger"></i> </a>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'blog/blog_footer.html' %}
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+</html>

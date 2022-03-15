@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div>
+    <div class="container mt-5">
+      <h3 style="color: #1d86d1">Servicios</h3>
+      <div class="row mt-5 text-center ">
+        <div class="col-md-4">
+          <img style="height: 4rem" src="{% static 'fonts/diag.png' %}" />
+          <h5 class="mt-4">Diagnostico</h5>
+          <p>
+            En el Centro Odontológico Dent Class prevenir es literalmente curar.
+            Un diagnóstico a tiempo te ayudará a evitar patologías bucodentales
+            más graves en el futuro.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <img style="height: 4rem" src="{% static 'fonts/solu.png' %}" />
+          <h5 class="mt-4">Solucion Cosmetica</h5>
+          <p>
+            En Dent Class ponemos a su disposición diferentes tratamientos
+            odontológicos sencillos e indoloros que te ayudarán a mejorar la
+            salud y apariencia de su boca.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <img style="height: 4rem" src="{% static 'fonts/impl.png' %}" />
+          <h5 class="mt-4">Implantes</h5>
+          <p>
+            En el Centro Odontológico Dent Class la implantología la realizan
+            odontólogos altamente calificados que cuentan para su trabajo con la
+            tecnología más avanzada.
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-3 text-center">
+        <div class="col-md-4">
+          <img style="height: 4rem" src="{% static 'fonts/endo.png' %}" />
+          <h5 class="mt-4">Endoncia</h5>
+          <p>
+            La odontología conservadora tiene como objetivo la conservación de
+            los dientes y del tejido dental sano, evitando siempre que sea
+            posible la extracción de las piezas afectadas.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <img style="height: 4rem" src="{% static 'fonts/ort.png' %}" />
+          <h5 class="mt-4">Ortodoncia</h5>
+          <p>
+            Los tratamientos de ortodoncia realizan suaves movimientos que
+            desplazan los dientes de forma individual o en bloque y corrigen su
+            colocación.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <img style="height: 4rem" src="{% static 'fonts/odonp.png' %}" />
+          <h5 class="mt-4">Ordontopediatria</h5>
+          <p>
+            La Odontopediatría es la rama de la Odontología encargada de tratar
+            a los niños. El odontopediatra será, por tanto, el encargado de
+            explorar y tratar a niños y adolescentes
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

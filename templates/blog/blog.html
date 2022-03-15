@@ -1,0 +1,69 @@
+{% extends 'blog/blog_base.html' %} {% block content %}
+<div class="">
+  <div class="row">
+    <div class="col-md-9" style="">
+      {% for post in object_list %} {% if post.id == 1 %}
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <div style="margin-left: 10%">
+            <h3>{{ post.title }}</h3>
+            <p><small>{{ post.created }}</small></p>
+
+            <a href="{{ post.get_absolute_url }}">
+              <img
+                style="width: 30rem; height: 20rem"
+                class="img-fluid"
+                src="{{ post.image.url }}"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-5">
+          <p>{{ post.resumen }}</p>
+          <button class="btn btn-primary">Leer mas</button>
+        </div>
+      </div>
+
+      {% endif %} {% endfor %}
+
+      <div class="row mt-3 p-4" style="margin-left: 0%">
+        {% for post in object_list %} {% if post.id != 1 %}
+
+        <div class="col-md-6 mt-2">
+          <h3>{{ post.title }}</h3>
+          <img
+            class="img-fluid mt-3"
+            style="height: 20rem; width: 100%"
+            src="{{ post.image.url }}"
+          />
+          <p class="mt-4">{{ post.resumen }}</p>
+          <small>{{ post.created }}</small>
+        </div>
+
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+
+    <div
+      class="col-md-3"
+      style="background-color: #1d86d1; color: white; height: auto"
+    >
+      <h3 class="text-center mt-3">Entradas Recientes</h3>
+
+      {% for post in object_list%}
+      <div class="">
+        <a
+          style="text-decoration: none; color: white"
+          href="{{ post.get_absolute_url }}"
+        >
+          {{ post.title}}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+{% endblock %}
